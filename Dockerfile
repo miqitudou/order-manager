@@ -1,6 +1,9 @@
 # 使用官方 Python 3.8 镜像作为基础镜像
 FROM python:3.10
 
+# 更新 pip
+RUN pip install --upgrade pip
+
 # 设置工作目录
 WORKDIR /app
 
