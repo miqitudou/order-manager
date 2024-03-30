@@ -5,21 +5,17 @@ services:
     build: .
     ports:
       - "8090:8090"
-    environment:
-      - DATABASE_URL=mysql://root:miqi@1109.com@db:3306/db_name
-      # 替换为您的数据库连接信息
     depends_on:
-      - db
-    volumes:
-      - .:/app
+      - mysql
 
-  db:
-    image: mysql:8.0
+  mqsql:
+    image: mysql:lastest
     environment:
-      MYSQL_ROOT_PASSWORD: miqi@1109.com
-      MYSQL_DATABASE: order_manage
-    volumes:
-      - db-data:/var/lib/mysql
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_ROOT_PASSWORD=miqi@1109.com
+      - MYSQL_DATABASE=order-manage
+#      - MYSQL_USER=root
+      - MYSQL_PASSWORD=miqi@1109.com
+    ports:
+      - 3306:3306
 
-volumes:
-  db-data:
