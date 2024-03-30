@@ -6,7 +6,7 @@ TORTOISE_ORM = {
             'credentials': {
                 'host': '127.0.0.1',
                 'port': '3306',
-                'user': 'gaoyuan',
+                'user': 'root',
                 'password': 'miqi@1109.com',
                 'database': 'order_manage',
                 'minsize': 1,
